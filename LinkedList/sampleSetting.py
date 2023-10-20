@@ -47,7 +47,6 @@ class LinkedList:
 
     def print_List(self):
         printval = self.head #khai báo printval là node đầu
-        print(str(printval))
         while (printval):
             print (printval.value,end=" ") #print từng node printval
             printval = printval.next #khai báo printval là số tiếp theo trong self.head
