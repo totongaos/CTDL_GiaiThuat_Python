@@ -6,8 +6,35 @@
 # n = int(input())
 # a = [int(input()) for i in range(n)]
 # x = int(input())
-a = [1,1,2,2,3,3,4,4,5]
-x = 7
-for i in range(0,len(a)):
-    if a[i] == x: print(i);break
-print(-1)
+a = [1,2,3,4,5,6,7,9,15]
+x = 4
+n=9
+
+# WAY 1:
+# for i in range(0,len(a)):
+#     if a[i] == x: print(i);break
+# print(-1)
+
+# WAY 2:
+L = 0
+R = n-1
+def BinarySearch(a,x,L,R):
+    while L < R:
+        mid_idx = (R + L) // 2
+        mid = a[mid_idx]
+        if x>mid:
+            L = mid_idx + 1
+        else:
+            R = mid_idx
+    if a[L]==x:
+        return L
+    else:
+        return -1
+print(BinarySearch(a,x,L,R))
+
+# WAY 3:
+# a = [int(input()) for _ in range(int(input()))]
+# try:
+#     print(a.index(int(input())))
+# except:
+#     print(-1)
