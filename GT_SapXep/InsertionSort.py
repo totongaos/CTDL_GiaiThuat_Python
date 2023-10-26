@@ -5,18 +5,23 @@
 # n = int(input())
 # arr = [int(input()) for i in range(n)]
 #
-arr = [4,3,1,5]
-n =4
+arr = [9, 1, 3, 7, 8, 4, 2, 6, 5]
+n=9
 def insertionSort(arr):
+    # k =0
     # Lặp qua tất cả các phần tử trong mảng
     for i in range(1,len(arr)):
         value = arr[i]
-        # Di chuyển tất cả các phần tử của mảng lớn hơn key về sau 1 vị trí
+        # Di chuyển tất cả các phần tử của mảng mà lớn hơn key về sau 1 vị trí
         index = i -1
         while index >=0 and value < arr[index]:
-            arr[index+1]= arr[index]
+            # k += 1
+            # print(f'index{k}',index)
+            # doi vi tri cho 2 phan tu voi nhau
+            # arr[index+1]= arr[index]
+            arr[index+1], arr[index]= arr[index], arr[index+1]
             index -= 1
-        arr[index + 1] = value
+        # arr[index + 1] = value
     return arr
 
 print(*insertionSort(arr))
