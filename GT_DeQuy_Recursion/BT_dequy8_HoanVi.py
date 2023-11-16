@@ -2,7 +2,7 @@
 # Hãy đưa ra các chuỗi hoán vị của các số từ 1 đến n, các chuỗi tăng dần theo thứ tự từ điển, sau mỗi chuỗi hoán vị có đúng một khoảng trắng.
 
 
-# way 1:
+# # way 1:
 # class Solution:
 #     def permute(self, nums: List[int]) -> List[List[int]]:
 #         def backtrack(curr):
@@ -21,6 +21,8 @@
 #         return ans
 #     print(ans)
 
+
+# ------------------------------------------------------
 # # way 2:
 # #2. tạo hàm permutation(arr) → hoán vị các phần tử của arr
 # def permutation(arr):
@@ -45,7 +47,7 @@
 #     return final_arr #7. return mảng final_arr
 #
 # # n = int(input())
-# n=2
+# n=3
 # #1. tạo 1 array arr với các phần tử từ 1 đến n
 # arr=[i for i in range(1,n+1)]
 # # print(arr)
@@ -58,6 +60,7 @@
 #     print(end=" ")
 
 
+# ----------------------------------------------------------
 # way 3:
 def permutation(n,str_s,count): #3. tạo hàm permutation(n,str_s,count)
     #3 thêm count để xài for, nêu ko để count nó sẽ ko đủ số
@@ -66,7 +69,7 @@ def permutation(n,str_s,count): #3. tạo hàm permutation(n,str_s,count)
     else:
         #chạy vòng lặp for -> lấy từng phần tử để hoán vị
         for i in range(1,count+1):
-            print('str(i)',str(i))
+            # print('str(i)',str(i))
             if str(i) in str_s: continue # Kiểm tra xem trong chuỗi đã có i chưa -> nếu chuỗi có i -> pass
             #nêu trong chuỗi có i -> xài đệ quy để add từng phần tử
             permutation(n-1,str_s + str(i),count)

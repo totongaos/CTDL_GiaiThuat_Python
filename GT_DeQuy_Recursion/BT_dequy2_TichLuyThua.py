@@ -5,10 +5,10 @@
 a=2
 b=3
 
-def factorials(a,b):
+def exponential(a,b):
     if b == 0:
         return 1
     else:
-        return a*factorials(a,b-1)
+        return a*exponential(a,b-1)
 
-print(factorials(a,b))
+print(exponential(a,b))
