@@ -12,19 +12,19 @@ dic_Affine1 = {0:'a', 1:'b', 2:'c', 3:'d', 4:'e',
 
 
 #Hàm mã hóa
-def encode(str_a, a, b, dic_Affine1, size_m):
-    #1. khai báo string mã hóa rỗng: str_encode = ''
-    str_encode = ''
+def encoding(str_a, a, b, dic_Affine1, size_m):
+    #1. khai báo string mã hóa rỗng: str_encoding = ''
+    str_encoding = ''
     for s in str_a: #2. xài vòng lặp for lấy từng kí tự trong chuỗi cần đc mã hóa
         for x, value in dic_Affine1.items(): #2.1. xài vòng lặp for check kí tự mã hóa trong dict
             if s == " ": #2.1.1 thêm khoảng cách cho chuỗi mã hóa
-                str_encode += " "
+                str_encoding += " "
                 break
             elif value == s.lower(): #2.1.2 mã hóa chuỗi
                 y = (a * x + b) % size_m
-                str_encode += dic_Affine1[y]
+                str_encoding += dic_Affine1[y]
                 break
-    return str_encode #3. return chỗi đã mã hóa xong
+    return str_encoding #3. return chỗi đã mã hóa xong
 
 
 #Hàm tìm số nghịch đảo
@@ -36,10 +36,10 @@ def find_inverse_num(a, size_m):
     return a_1
 
 #Hàm giải mã
-def decode(str_encode,a_1,b,dic_Affine1):
+def decode(str_encoding,a_1,b,dic_Affine1):
     #1. khai báo string giải mã rỗng: str_decode = ''
     str_decode = ''
-    for s in str_encode: #2. xài vòng lặp for lấy từng kí tự trong chuỗi cần đc giải mã
+    for s in str_encoding: #2. xài vòng lặp for lấy từng kí tự trong chuỗi cần đc giải mã
         for y, value in dic_Affine1.items(): #2.1. xài vòng lặp for check kí tự mã hóa trong dict
             if s == " ": #2.1.1 thêm khoảng cách cho chuỗi giải mã
                 str_decode += " "
@@ -52,7 +52,7 @@ def decode(str_encode,a_1,b,dic_Affine1):
 
 a=7
 b=3
-str_a = 'It is nice today'
+str_a = 'it is nice today'
 #1. input khóa key{a,b}
 # a ,b = [int(i) for i input().split()]
 #2. input string mã hóa
@@ -60,17 +60,17 @@ str_a = 'It is nice today'
 size_m = len(dic_Affine1)
 
 #3. chạy hàm mã hóa
-str_encode=encode(str_a, a, b, dic_Affine1, size_m)
-print('Encrypted Message is : ',str_encode)
+str_encoding=encoding(str_a, a, b, dic_Affine1, size_m)
 
 #4. chạy hàm tìm số nghịch của a (a^-1)
 a_1 = find_inverse_num(a, size_m)
 
 #5. chạy hàm giải mã
-str_decode = decode(str_encode,a_1,b,dic_Affine1)
+str_decode = decode(str_encoding,a_1,b,dic_Affine1)
 
 #6. print theo yc đề bài
 if str_a.lower() == str_decode.lower():
-    print('Decrypted Message is : ',str_decode)
+    print('Encrypted Message is : ', str_encoding)
+    print('Decrypted Message is : ',str_encoding)
 else:
     print('Cannot Encrypted and Decrypted this Message')

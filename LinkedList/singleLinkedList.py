@@ -9,13 +9,13 @@ class Linked_List:
         self.headNode = None
 
     def add_element_at_end(self,newdata):
-        # 1&2 phân bổ nút và đưa dữ liệu vào
-        # 3 đặt tiếp theo là không có
+        # 1&2. phân bổ nút và đưa dữ liệu vào
+        # 3. đặt tiếp theo là không có
         NewNode = Node(newdata)
-        if self.headNode is None:  # 4 nếu danh sách được liên kết là trống
+        if self.headNode is None:  # 4. nếu danh sách được liên kết là trống
             self.headNode = NewNode # hãy tạo nút mới làm đầu
             return
-        # 5 đi qua cho đến node cuối
+        # 5. đi qua cho đến node cuối
         last_element = self.headNode
         while last_element.next is not None:
             last_element = last_element.next
