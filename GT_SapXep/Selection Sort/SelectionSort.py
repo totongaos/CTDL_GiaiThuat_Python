@@ -8,14 +8,14 @@
 #
 arr = [3,2,1,3,4,5]
 
-#WAY 2:
+#WAY 1:
 def selectionSort(arr):
-		# tạo vòng lặp chạy từ đầu đến cuối mảng a
+	# tạo vòng lặp chạy từ đầu đến cuối mảng a
     for j in range(0, len(arr)):
-				# hãy coi biến đầu tiên là biến nhỏ nhất trong dãy
+		# hãy coi biến đầu tiên là biến nhỏ nhất trong dãy
         min = j
-				# tạo vòng lặp từ biến tiếp theo đến hết dãy
-        for i in range(0+j,len(arr)):
+		# tạo vòng lặp từ biến tiếp theo đến hết dãy
+        for i in range(1+j,len(arr)):
             if arr[min] > arr[i]:
                 min = i
 				# đổi chỗ vị trí của số thấp nhất với biến đầu tiên của mảng
@@ -25,9 +25,5 @@ def selectionSort(arr):
 
 print(*selectionSort(arr))
 
-
-
-#WAY 1:
-#
 
 

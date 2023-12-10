@@ -24,7 +24,7 @@ def dynamic_programming(arr,n,money):
         # for x in range(n+1):
         #     print(result[x])
         # -------------------------------------------------------------
-        # 31. truy vet vat mang theo (show tổng các vật trong balo)
+        # 31. truy vet vat mang theo
         i_n = n
         L_b = money
         lst_i_n = []

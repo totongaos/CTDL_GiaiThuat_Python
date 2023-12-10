@@ -30,7 +30,7 @@ def dynamic_programming(arr,n):
         else:
             lst[i] = 1
     print('cac đo dai cua day con:',lst)
-    #2. tim index phan cua phan tu lon nhat
+    #2. tim index cua phan tu lon nhat
     index_Max = lst.index(max(lst))
     #3. Goi ham display(arr, l,r)
     display(arr,index_Max - lst[index_Max] + 1,index_Max)
@@ -62,7 +62,6 @@ dynamic_programming(arr,n)
 #         else:
 #             break
 #     return count
-#
 #
 # def longest_nonde (data):
 #     r = len(data) - 1

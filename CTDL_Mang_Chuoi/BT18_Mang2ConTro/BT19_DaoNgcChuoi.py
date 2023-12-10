@@ -1,6 +1,6 @@
-string_1st = [x for x in input().split()]
-# string_1st = 't e k 4'
-# string_1st = list(string_1st)
+# string_1st = [x for x in input().split()]
+string_1st = 't e k 4'
+string_1st = list(string_1st)
 
 def array_OfTwoPoint(string_1st):
     left = 0

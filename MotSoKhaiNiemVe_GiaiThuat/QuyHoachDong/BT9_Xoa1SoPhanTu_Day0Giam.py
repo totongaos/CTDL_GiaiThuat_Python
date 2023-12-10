@@ -1,10 +1,12 @@
 '''
-Tìm Dãy con tăng dài nhất (Dãy đơn điệu tăng), **dãy con ko liên tiếp + truy vết (ko áp dụng với số 0)**
-vd: [1,4,3,5,2] => dãy con là [1,3,5] -> len = 3
+Một dãy không giảm là dãy mà các phần tử sau không nhỏ hơn các phần tử trước.
+Nhập vào số nguyên dương n và một dãy số nguyên a.
+Hãy xóa một số phần tử trong dãy a để dãy trở thành dãy không giảm dài nhất có thể.
+Nếu có nhiều cách xóa mà dãy còn lại xuất hiện sớm hơn. In dãy còn lại ra màn hình, sau mỗi phần tử có đúng một khoảng trắng.
+Đầu vào          [1,2,3,5,3,5,7,8,4,2,1,2,3,5,3,4,5,6,7,8,5,4,5,32,3,44,5]
+Đầu ra mong muốn "1 2 3 3 3 3 4 5 6 7 8 32 44"
 '''
 
-#---------------------------------------------
-#way 1:
 #HAM dynamic_programming
 def dynamic_programming(arr,n):
     # 0. Cài thông báo lỗi
@@ -24,14 +26,11 @@ def dynamic_programming(arr,n):
     for i in range(1,n+1):
         max_len = 0 #reset lại value max_len
         for j in range(0,i):
-            if arr[j]<arr[i] and lst[j]>max_len: #so sánh để tìm ra value max_len mới
+            if arr[j]<=arr[i] and lst[j]>max_len: #so sánh để tìm ra value max_len mới
                 # print('arr[j]<arr[i]',arr[j],arr[i], '\tlst[j] > max_len', lst[j], max_len)
                 max_len=lst[j]
                 lst_trace[i] = j #luu value moc noi tại lst_trace
             lst[i] = max_len + 1 #lưu value max_len+1 tại index i vào mảng lst
-
-    print(f'arr: {arr}\nlst: {lst}\nlst_trace: {lst_trace}')
-    print(f'max_len:{max(lst)}')
 
     #3. TRUY VET
     result = []
@@ -42,16 +41,16 @@ def dynamic_programming(arr,n):
         index_Max = lst_trace[index_Max] #đang truy vết ngc lại
     result.append(arr[index_Max]) #appned pẩn tử cuối vào mảng
     result = sorted(result)
-
     return result
 
 
 #1. input n & mang arr
 # n = int(input())
 # arr = [int(input()) for i in range(n)]
-n = 3
-arr = [1,0,3]
+
+n=27
+arr = [1,2,3,5,3,5,7,8,4,2,1,2,3,5,3,4,5,6,7,8,5,4,5,32,3,44,5]
 arr[:0]=[0] #add 0 vào index-0
 
 #2. chay ham dynamic_programming
-print(dynamic_programming(arr,n))
+print(*dynamic_programming(arr,n))

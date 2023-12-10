@@ -5,17 +5,17 @@ class ListNode(object):
         self.next = next
 
 if __name__ == '__main__':
-    #Tao ra 3 node
+    #1. Tao ra 3 node
     n1 = ListNode(1)
     n2 = ListNode(2)
     n3 = ListNode(3)
 
-    #noi cac node lai voi nhau
+    #2. noi cac node lai voi nhau
     n1.next = n2
     n2.next = n3
 
     print("Linked List:", end=" ")
-    #duyet cac p.tu trong linked list
+    #3. duyet cac p.tu trong linked list
     pHead = n1
     while pHead:
         print(pHead.val, end=" ")
