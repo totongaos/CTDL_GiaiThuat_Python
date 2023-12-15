@@ -21,18 +21,18 @@ def pop(stack):
     result.append(stack.pop())
     return
 
+if __name__ == '__main__':
+    stack = create_stack()
+    result = []
+    # n=int(input())
+    n = 5
+    for i in range(0,n):
+        step = input().split() #nhập giá trị của từng phần tử trong mảng
+        if not step:
+            break
+        if 'push' in step:
+            push(stack,step[1])
+        elif 'pop' in step:
+            pop(stack)
 
-stack = create_stack()
-result = []
-# n=int(input())
-n = 5
-for i in range(0,n):
-    step = input().split() #nhập giá trị của từng phần tử trong mảng
-    if not step:
-        break
-    if 'push' in step:
-        push(stack,step[1])
-    elif 'pop' in step:
-        pop(stack)
-
-print(*result)
+    print(*result)

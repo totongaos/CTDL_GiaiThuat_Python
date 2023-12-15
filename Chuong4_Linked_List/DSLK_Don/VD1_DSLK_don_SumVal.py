@@ -1,8 +1,5 @@
 # Ví dụ 1: hãy tính tổng tất cả các giá trị trong danh sách liên kết số nguyên:
 
-
-
-#class LinkedList
 class ListNode:
     #Hàm add từng phần tử val vào link list
     def __init__(self, val):

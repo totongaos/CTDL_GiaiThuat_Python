@@ -1,7 +1,7 @@
 from sampleSetting import *
 
 def main():
-    #khai báo lst là class LinkedList
+    #khai báo lst là class Linked List
     L1 = LinkedList()
     n = 3
 

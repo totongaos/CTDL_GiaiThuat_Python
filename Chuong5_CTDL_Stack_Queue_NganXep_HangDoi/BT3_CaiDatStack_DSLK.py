@@ -1,4 +1,15 @@
-# Python program for linked list implementation of stack
+''' Python program for linked list implementation of stack
+Đầu vào 1: 5
+push 2
+push 3
+pop
+push 4
+pop
+
+Đầu ra 1: 3 4
+'''
+
+
 # Class to represent a node
 class StackNode:
 	# Constructor to initialize a node
