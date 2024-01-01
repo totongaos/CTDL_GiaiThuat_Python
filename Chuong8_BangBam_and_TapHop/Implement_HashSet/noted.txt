@@ -1,0 +1,7 @@
+WAY 1: xài hàm enumerate()  -> hơi khó hiểu enumerate()
+-> vì k biết cách nào để nó lấy đc p.tư trong list.
+-> Vì print list ra đc ko thấy được
+
+Lý thuyết: Enumerate là một **built-in function** của Python.
+Bạn có thể sử dụng nó cho các vòng lặp của một iterable với việc *tự động sinh ra chỉ số index**
+

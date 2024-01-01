@@ -13,9 +13,9 @@ def matrix_lst_row(matrix_first,x,n_col):
 # print(matrixTransposition(matrix_first,m_row,n_col))
 
 #1. input 2 biến m_row & n_col
-# m_row, n_col = [int(x) for x in input().split()]
-m_row = 4
-n_col = 3
+m_row, n_col = [int(x) for x in input().split()]
+# m_row = 4
+# n_col = 3
 #2. khai báo & input mảng matrix_first
 matrix_first = []
 # matrix_first = [[0 for x in range(n_col)] for y in range(m_row)]
